@@ -19,13 +19,13 @@ def alarm():
 
 
     with open("YT.txt") as f:
-        content = f.readlines()
+        videos = f.readlines()
     while Time != Alarm:
         Time = time.strftime("%I:%M %p")
     if Time==Alarm:
         print("Time to Wake up!")
-        random_video = random.choice(content)
-        webbrowser.open(random_video)
+        video = random.choice(videos)
+        webbrowser.open(video)
 
 
 def main():
@@ -34,6 +34,6 @@ def main():
 
 
 if __name__ == '__main__':
-    os.system('cls')
+    
     main()
 
