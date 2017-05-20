@@ -17,6 +17,7 @@ def main():
             return False
         elif 0 < number <= 100:
             break
+    fib(number)
 
 
 
