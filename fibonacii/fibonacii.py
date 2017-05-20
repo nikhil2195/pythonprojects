@@ -7,7 +7,7 @@ def fib(num):
 
 def main():
     while True:
-        print("Enter the number to generate fibonaci")
+        print("Enter a number below 100 to generate fibonacii")
         number=int(input('> '))
         if number<0:
             print("Please enter a positive number")
@@ -18,7 +18,7 @@ def main():
         elif 0 < number <= 100:
             break
 
-    fib(number)
+
 
 
 
