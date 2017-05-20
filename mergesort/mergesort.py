@@ -1,31 +1,37 @@
-def merge(lefthalf, righthalf):
-    i = j = 0
+def merge(left,right):
     result = []
-    while i < len(lefthalf) and j < len(righthalf):
-        if lefthalf[i] < righthalf[j]:
-            result.append(lefthalf[i])
-            i += 1
+    while len(left) != 0 and len(right) != 0:
+        if left[0] < right[0]:
+            result.append(left[0])
+            left.remove(left[0])
         else:
-            result.append(righthalf[j])
-            j += 1
-    while i < len(lefthalf):
-        result.append(lefthalf[i])
-        i += 1
-    while j < len(righthalf):
-        result.append(righthalf[j])
-        j += 1
+            result.append(right[0])
+            right.remove(right[0])
+    if len(left) == 0:
+        result += right
+    else:
+        result += left
     return result
 
 
-def mergesort(mergelist):
-    if len(mergelist)==1:
-        return mergelist
-    mid=len(mergelist) // 2
-    lefthalf=mergelist[:mid]
-    righthalf=mergelist[mid:]
-    return merge(lefthalf,righthalf)
+def mergesort(x):
+    
+    if len(x) == 0 or len(x) == 1:
+        return x
+    else:
+        middle = len(x)//2
+        left = mergesort(x[:middle])
+        right = mergesort(x[middle:])
+        return merge(left,right)
 
 
+
+def main(mergelist):
+    x=mergesort(mergelist)
+    print(x)
+    
+
+main([21,12,51,21,643,123,75,123,754,2132,54,554,548,5485])
 
 
 
