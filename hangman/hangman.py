@@ -40,7 +40,7 @@ def game(gameword,hiddenword):
     while not chances == 0:
         
 
-        print("Enter your character/word. There are ",chances," remaining.")
+        print("Enter your character/word. There are ",chances," guesses remaining.")
         guess=input()
         if guess.lower()==gameword.lower():
             print("Congratulations you've guessed correctly")
