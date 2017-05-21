@@ -4,10 +4,10 @@ import os
 import random
 
 def alarm():
-    if not os.path.isfile("YT.txt"):
+    if not os.path.isfile("youtubelinks.txt"):
         print("error: file not found. creating file")
         flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
-        filecreate = os.open("YT.txt",flags)
+        filecreate = os.open("youtubelinks.txt",flags)
         with os.fdopen(filecreate,'w') as fileCreated:
             fileCreated.write("https://www.youtube.com/watch?v=eVTXPUF4Oz4")
 
@@ -18,7 +18,7 @@ def alarm():
     Time =time.strftime('%H:%M %p')
 
 
-    with open("YT.txt") as f:
+    with open("youtubelinks.txt") as f:
         videos = f.readlines()
     while Time != Alarm:
         Time = time.strftime("%I:%M %p")
