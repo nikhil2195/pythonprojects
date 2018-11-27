@@ -1,2 +1,2 @@
-## Mini-python projects.
+## Python projects for practice.
 
